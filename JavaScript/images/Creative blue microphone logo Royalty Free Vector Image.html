@@ -1,0 +1,835 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="csrf-name" content="csrf5ec63f6f44c60">
+	<meta name="csrf-value" content="e1a1253af46d1a0fc82081d8a0a2fdcf">
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"02e09611df",applicationID:"156179534"};window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var i=n[t]={exports:{}};e[t][0].call(i.exports,function(n){var i=e[t][1][n];return r(i||n)},i,i.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(e,n,t){function r(){}function i(e,n,t){return function(){return o(e,[u.now()].concat(f(arguments)),n?null:this,t),n?void 0:this}}var o=e("handle"),a=e(4),f=e(5),c=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",d=l+"ixn-";a(p,function(e,n){s[n]=i(l+n,!0,"api")}),s.addPageAction=i(l+"addPageAction",!0),s.setCurrentRouteName=i(l+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,i="function"==typeof n;return o(d+"tracer",[u.now(),e,t],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return n.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],t),e}finally{c.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=i(d+n)}),newrelic.noticeError=function(e,n){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,n])}},{}],2:[function(e,n,t){function r(e,n){var t=e.getEntries();t.forEach(function(e){"first-paint"===e.name?c("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&c("timing",["fcp",Math.floor(e.startTime)])})}function i(e,n){var t=e.getEntries();t.length>0&&c("lcp",[t[t.length-1]])}function o(e){if(e instanceof s&&!l){var n,t=Math.round(e.timeStamp);n=t>1e12?Date.now()-t:u.now()-t,l=!0,c("timing",["fi",t,{type:e.type,fid:n}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var a,f,c=e("handle"),u=e("loader"),s=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){a=new PerformanceObserver(r),f=new PerformanceObserver(i);try{a.observe({entryTypes:["paint"]}),f.observe({entryTypes:["largest-contentful-paint"]})}catch(p){}}if("addEventListener"in document){var l=!1,d=["click","keydown","mousedown","pointerdown","touchstart"];d.forEach(function(e){document.addEventListener(e,o,!1)})}}},{}],3:[function(e,n,t){function r(e,n){if(!i)return!1;if(e!==i)return!1;if(!n)return!0;if(!o)return!1;for(var t=o.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}n.exports={agent:i,version:o,match:r}},{}],4:[function(e,n,t){function r(e,n){var t=[],r="",o=0;for(r in e)i.call(e,r)&&(t[o]=n(r,e[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],5:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,i=t-n||0,o=Array(i<0?0:i);++r<i;)o[r]=e[n+r];return o}n.exports=r},{}],6:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function i(e){function n(e){return e&&e instanceof r?e:e?c(e,f,o):o()}function t(t,r,i,o){if(!l.aborted||o){e&&e(t,r,i);for(var a=n(i),f=v(t),c=f.length,u=0;u<c;u++)f[u].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function d(e,n){h[e]=v(e).concat(n)}function m(e,n){var t=h[e];if(t)for(var r=0;r<t.length;r++)t[r]===n&&t.splice(r,1)}function v(e){return h[e]||[]}function g(e){return p[e]=p[e]||i(t)}function w(e,n){u(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var h={},y={},b={on:d,addEventListener:d,removeEventListener:m,emit:t,get:g,listeners:v,context:n,buffer:w,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(l.aborted=!0,s=l.backlog={})}var f="nr@context",c=e("gos"),u=e(4),s={},p={},l=n.exports=i();l.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(i.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[n]=r,r}var i=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){i.buffer([e],r),i.emit(e,n,t)}var i=e("ee").get("handle");n.exports=r,r.ee=i},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=E.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();u(y,function(n,t){e[n]||(e[n]=t)}),c("mark",["onload",a()+E.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function i(){"complete"===d.readyState&&o()}function o(){c("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(f=Math.max((new Date).getTime(),f))-E.offset}var f=(new Date).getTime(),c=e("handle"),u=e(4),s=e("ee"),p=e(3),l=window,d=l.document,m="addEventListener",v="attachEvent",g=l.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:l.setImmediate,CT:clearTimeout,XHR:g,REQ:l.Request,EV:l.Event,PR:l.Promise,MO:l.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1167.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),E=n.exports={offset:f,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};e(1),e(2),d[m]?(d[m]("DOMContentLoaded",o,!1),l[m]("load",r,!1)):(d[v]("onreadystatechange",i),l[v]("onload",r)),c("mark",["firstbyte",f],null,"api");var x=0,O=e(6)},{}],"wrap-function":[function(e,n,t){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(5),a="nr@original",f=Object.prototype.hasOwnProperty,c=!1;n.exports=function(e,n){function t(e,n,t,i){function nrWrapper(){var r,a,f,c;try{a=this,r=o(arguments),f="function"==typeof t?t(r,a):t||{}}catch(u){l([u,"",[r,a,i],f])}s(n+"start",[r,a,i],f);try{return c=e.apply(a,r)}catch(p){throw s(n+"err",[r,a,p],f),p}finally{s(n+"end",[r,a,c],f)}}return r(e)?e:(n||(n=""),nrWrapper[a]=e,p(e,nrWrapper),nrWrapper)}function u(e,n,i,o){i||(i="");var a,f,c,u="-"===i.charAt(0);for(c=0;c<n.length;c++)f=n[c],a=e[f],r(a)||(e[f]=t(a,u?f+i:i,o,f))}function s(t,r,i){if(!c||n){var o=c;c=!0;try{e.emit(t,r,i,n)}catch(a){l([a,t,r,i])}c=o}}function p(e,n){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(e);return t.forEach(function(t){Object.defineProperty(n,t,{get:function(){return e[t]},set:function(n){return e[t]=n,n}})}),n}catch(r){l([r])}for(var i in e)f.call(e,i)&&(n[i]=e[i]);return n}function l(n){try{e.emit("internal-error",n)}catch(t){}}return e||(e=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);</script>	<meta name="cart-hash" content="d751713988987e9331980363e24189ce">
+	<link rel="dns-prefetch" href="https://cdn.vectorstock.com">
+	<link rel="dns-prefetch" href="https://cdn1.vectorstock.com">
+	<link rel="dns-prefetch" href="https://cdn2.vectorstock.com">
+	<link rel="dns-prefetch" href="https://cdn3.vectorstock.com">
+	<link rel="dns-prefetch" href="https://cdn4.vectorstock.com">
+	<link rel="dns-prefetch" href="https://cdn5.vectorstock.com">
+
+	<title>Creative blue microphone logo Royalty Free Vector Image</title>
+	<meta name="description" content="Creative Blue Microphone Logo. Download a Free Preview or High Quality Adobe Illustrator Ai, EPS, PDF and High Resolution JPEG versions..">
+	
+	<meta property="og:site_name" content="VectorStock">
+	<meta property="og:type" content="product">
+	<meta property="og:url" content="https://www.vectorstock.com/royalty-free-vector/creative-blue-microphone-logo-vector-24925234">
+	<meta property="og:title" content="Creative blue microphone logo vector image on VectorStock">
+	<meta property="og:description" content="Creative Blue Microphone Logo. Download a Free Preview or High Quality Adobe Illustrator Ai, EPS, PDF and High Resolution JPEG versions.">
+	<meta property="og:image" content="https://cdn5.vectorstock.com/i/1000x1000/52/34/creative-blue-microphone-logo-vector-24925234.jpg">
+	<meta property="og:image:url" content="https://cdn5.vectorstock.com/i/1000x1000/52/34/creative-blue-microphone-logo-vector-24925234.jpg">
+	<meta property="og:image:secure_url" content="https://cdn5.vectorstock.com/i/1000x1000/52/34/creative-blue-microphone-logo-vector-24925234.jpg">
+	<meta property="og:image:type" content="image/jpeg">
+	<meta property="og:image:width" content="1000">
+	<meta property="og:image:height" content="714">
+	<meta property="og:price:amount" content="0.69">
+	<meta property="og:price:currency" content="USD">
+	<meta property="product:price:amount" content="0.69">
+	<meta property="product:price:currency" content="USD">
+
+	<meta property="fb:app_id" content="241100862642313">
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:url" content="https://www.vectorstock.com/royalty-free-vector/creative-blue-microphone-logo-vector-24925234">
+	<meta name="twitter:title" content="Creative blue microphone logo vector image">
+	<meta name="twitter:description" content="Creative Blue Microphone Logo">
+	<meta name="twitter:image" content="https://cdn5.vectorstock.com/i/thumb-large/52/34/creative-blue-microphone-logo-vector-24925234.jpg">
+	<meta name="twitter:image:width" content="238">
+	<meta name="twitter:image:height" content="250">
+	<meta name="twitter:site" content="@VectorStock">
+
+	<link rel="canonical" href="https://www.vectorstock.com/royalty-free-vector/creative-blue-microphone-logo-vector-24925234">
+	<link rel="shortcut icon" href="https://cdn.vectorstock.com/img/icons/favicon.ico" type="image/x-icon">
+
+	<link rel="stylesheet" href="//cdn.vectorstock.com/cache/common1589843141.min.css">
+	<link rel="stylesheet" href="//cdn.vectorstock.com/cache/vector1589843141.min.css">
+	<script src="//cdn.vectorstock.com/cache/common1589515663.min.js"></script>
+	<script src="//cdn.vectorstock.com/cache/vector1589515663.min.js"></script>
+<!-- Analytics --><script type="text/javascript">// Load GA script
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+// Setup
+ga('create', 'UA-2180430-2', 'none');
+ga('require', 'linkid', 'linkid.js');
+ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+
+<!-- Top header -->
+<header>
+	<nav class="top">
+		<figure>
+			<a href="/" title="VectorStock&reg;">VectorStock&reg;</a>
+		</figure>
+
+		<div class="grid">
+			<form id="searchbox" class="focused empty">
+				<div class="wrap">
+					<fieldset>
+						<div class="contents">
+							<div class="tags">
+								<ul></ul>
+							</div>
+							<div class="input">
+								<input type="text" name="input" autocomplete="off" autocapitalize="none" spellcheck="true" value="" placeholder="Search…" maxlength="50" autofocus>
+								<button type="button" data-action="clear">×</button>
+							</div>
+
+							<input type="hidden" name="category" value="">
+							<input type="hidden" name="custom_srp" value="">
+							<input type="hidden" name="artist" value="">
+							<input type="hidden" name="similar" value="">
+						</div>
+					</fieldset>
+
+					<button type="submit">
+						<span class="icon">Search</span>
+					</button>
+				</div>
+			</form>
+			<ul>
+					<li><a href="/royalty-free-vectors">All Vectors</a></li>
+					<li><a href="/free-vectors">Free Vectors</a></li>
+				</ul>
+		</div>
+
+		<div class="aside">
+			<ul>
+				<li><a href="/popular-categories" title="Popular Categories">Categories</a></li>
+				<li><a href="/pricing" title="Pricing">Pricing</a></li>
+				<li class="account">
+					<button type="button" data-action="signup">Sign Up</button>
+					<button type="button" data-action="login">Login</button>
+				</li>
+			</ul>
+		</div>
+
+		<div id="mobilenav-icon">
+			<span></span><span></span><span></span><span></span>
+		</div>
+	</nav>
+
+	<!-- Submenu -->
+		<nav id="searchrelated"></nav>	
+
+		<!-- Mobile menu -->
+	<div id="mobilenav-menu">
+		<div>
+			<div class="group">
+				<h4>Browse</h4>
+				<ul>
+					<li><a href="/royalty-free-vectors">All Vectors</a></li>
+					<li><a href="/free-vectors">Free Vectors</a></li>
+				</ul>
+			</div>
+			<div class="group">
+				<h4>Account</h4>
+				<ul>
+					<li class="account">
+							<ul>
+								<li><a href="/signup">Sign Up</a></li>
+								<li data-action="login"><a href="/?login=1">Login…</a></li>
+								<li><a href="/pricing">Pricing</a></li>
+							</ul>
+						</li>
+				</ul>
+				<form method="get" action="/auth/logout" class="logout">
+					<input type="hidden" name="logout" value="1">
+				</form>
+			</div>
+			<div class="group">
+				<h4>Help</h4>
+				<ul>
+					<li><a href="/faq"><abbr title="Frequently Asked Questions">FAQs</abbr></a></li>
+					<li><a href="/contact">Contact Us</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</header>
+
+		<!-- Account Menu Tabs -->
+		<aside id="nav_sidebar" class="tabs tabsDark">
+
+			<nav>
+				<ul role="tablist">
+					<li data-tab-id="signup" class=""><span role="tab"><span>Sign Up</span></span></li>
+					<li data-tab-id="login" class="selected"><span role="tab"><span>Log In</span></span></li>
+				</ul>
+			</nav>
+
+			<section id="sb_signup" data-tab-id="signup" class="">
+				<div class="primary">
+					<p>New to VectorStock?</p>
+					<p><em>We're the largest royalty-free, vector-only stock agency in the world.</em></p>
+					<p>Every week we add new premium graphics by the thousands.</p>
+				</div>
+				<div class="secondary">
+					<p>Whether you're a global ad&nbsp;agency or a freelance graphic designer, we have the vector graphics to make your project come to life.</p>
+					<p>Buy Vectors, sell Vectors or both. <a href="/signup">Sign up now, it’s free.</a></p>
+				</div>
+				<div class="footer">
+					<button class="master">
+						<span class="title">Sign Up...</span>
+						<span class="value">
+							<span class="symbol signup"></span>
+						</span>
+					</button>
+				</div>
+			</section>
+
+			<section id="sb_login" data-tab-id="login" class="selected">
+				<form action="/auth/login" method="post">
+
+
+					<fieldset class="">
+						<label for="vs_username">Email / Username</label>
+						<div class="textfield">
+							<input type="text" id="vs_username" name="vs_username" value="" autocomplete="on" tabindex="1">
+						</div>
+					</fieldset>
+					<fieldset class="">
+						<label for="vs_password">Password</label>
+						<button type="button" class="forgot">Forgot Password</button>
+						<div class="textfield">
+							<input type="password" id="vs_password" name="vs_password" value="" autocomplete="on" tabindex="2"  maxlength="72">
+						</div>
+					</fieldset>
+					<fieldset>
+						<div class="checkbox checked">
+							<label class="selected" for="vs_remember">
+								<span class="title">Stay Logged In</span>
+								<span class="icon"></span>
+								<input type="checkbox" id="vs_remember" name="vs_remember" value="yes" tabindex="3" checked>
+							</label>
+						</div>
+					</fieldset>
+
+
+					<button type="submit" tabindex="4">Log In</button>
+				</form>
+				<div class="alternatives">
+					<h6>Or Login With</h6>
+					<ul>
+						<li class="gp"><a href="/">
+							<span class="title">Google</span>
+							<span class="icon"></span>
+						</a></li>
+						<li class="fb"><a href="/">
+							<span class="title">Facebook</span>
+							<span class="icon"></span>
+						</a></li>
+					</ul>
+				</div>
+
+				
+			</section>
+		</aside>
+
+	<!-- Page -->
+	<article>
+		<section id="vs-asset">
+
+			<!-- Aside -->
+			<div class="aside">
+				<ol itemscope itemtype="http://schema.org/BreadcrumbList">
+					<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+						<a itemtype="http://schema.org/Thing" itemprop="item" href="/royalty-free-vectors">
+							<span itemprop="name">Royalty Free Vectors</span>
+						</a>
+						<meta itemprop="position" content="1" />
+					</li>
+					<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+						<a itemtype="http://schema.org/Thing" itemprop="item" href="/royalty-free-vectors/microphone-vectors">
+							<span itemprop="name">Microphone Vectors</span>
+						</a>
+						<meta itemprop="position" content="2" />
+					</li>
+				</ol>
+
+				<h1>
+					Creative blue microphone logo vector&nbsp;image														</h1>
+
+				<figure style="padding-top: 71.960784313725%;" class="target">
+					<div class="highres" data-src="https://cdn5.vectorstock.com/i/1000x1000/52/34/creative-blue-microphone-logo-vector-24925234.jpg">
+						<noscript><img src="https://cdn5.vectorstock.com/i/1000x1000/52/34/creative-blue-microphone-logo-vector-24925234.jpg" title="Creative blue microphone logo vector image" alt="Creative blue microphone logo"></noscript>
+					</div>
+					<div class="lowres">
+						<img src="https://cdn5.vectorstock.com/i/thumbs/52/34/creative-blue-microphone-logo-vector-24925234.jpg" title="Creative blue microphone logo vector image" alt="Creative blue microphone logo">
+					</div>
+					<div class="overlay"></div>
+				</figure>
+
+				<form data-loggedin="0" data-licenses="2" data-license="standard" data-status="" data-payments="3" data-payment="single-image">
+					<input type="hidden" id="vector_id" value="24925234">
+					<input type="hidden" id="vector_title" value="Creative blue microphone logo">
+					<input type="hidden" id="vector_description" value="Creative Blue Microphone Logo. Download a Free Preview or High Quality Adobe Illustrator Ai, EPS, PDF and High Resolution JPEG versions.">
+					<input type="hidden" id="vector_url" value="https://www.vectorstock.com/royalty-free-vector/creative-blue-microphone-logo-vector-24925234">
+					<input type="hidden" id="vector_media" value="https://cdn5.vectorstock.com/i/1000x1000/52/34/creative-blue-microphone-logo-vector-24925234.jpg">
+					<input type="hidden" id="vector_ratio" value="0.71960784313725">
+					<input type="hidden" id="vector_license_status" value="">
+					<input type="hidden" id="artist_name" value="Abrastack">
+					<input type="hidden" id="account_user" value="0">
+
+					<div class="options">
+						<!--
+						-- OPTION: License type
+						-->
+						<div class="option" data-type="license" data-license="standard" data-licenses="2">
+							<h6><span class="type">License</span><a href="/faq/members/standard-license">Learn More</a></h6>
+							<div class="optgroup radgroup">
+								<fieldset>
+									<label for="f_license_standard" class="checked">
+										<input type="radio" id="f_license_standard" name="license" value="standard" checked="checked" tabindex="2">
+										<span class="label">Standard</span>
+										<span class="descr">For Print, Advertising, Design</span>
+									</label>
+								</fieldset>
+								<fieldset>
+									<label for="f_license_expanded">
+										<input type="radio" id="f_license_expanded" name="license" value="expanded" tabindex="4">
+										<span class="label">Expanded</span>
+										<span class="descr">For Resale &amp; Reproduction</span>
+									</label>
+								</fieldset>
+							</div>
+
+							<div class="help">
+								<p>The license type determines how you can use this image.</p>
+								<table>
+									<thead>
+										<tr>
+											<th></th>
+																						<th data-license="standard">Std.</th>																						<th data-license="expanded">Exp.</th>										</tr>
+									</thead>
+									<tbody>
+																				<tr>
+											<td>Print / Editorial</td>
+																						<td data-license="standard"><span class="yes"></span></td>
+											<td data-license="expanded"><span class="yes"></span></td>										</tr>
+										<tr>
+											<td>Graphic Design</td>
+																						<td data-license="standard"><span class="yes"></span></td>
+											<td data-license="expanded"><span class="yes"></span></td>										</tr>
+										<tr>
+											<td>Web Design</td>
+																						<td data-license="standard"><span class="yes"></span></td>
+											<td data-license="expanded"><span class="yes"></span></td>										</tr>
+										<tr>
+											<td>Social Media</td>
+																						<td data-license="standard"><span class="yes"></span></td>
+											<td data-license="expanded"><span class="yes"></span></td>										</tr>
+										<tr>
+											<td>Edit &amp; Modify</td>
+																						<td data-license="standard"><span class="yes"></span></td>
+											<td data-license="expanded"><span class="yes"></span></td>										</tr>
+										<tr>
+											<td>Multi-user</td>
+																						<td data-license="standard"><span class="no"></span></td>
+											<td data-license="expanded"><span class="yes"></span></td>										</tr>
+										<tr>
+											<td>Resale Items</td>
+																						<td data-license="standard"><span class="no"></span></td>
+											<td data-license="expanded"><span class="yes"></span></td>										</tr>
+										<tr>
+											<td>Unlimited Runs</td>
+																						<td data-license="standard"><span class="no"></span></td>
+											<td data-license="expanded"><span class="yes"></span></td>										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+
+						<!--
+						-- OPTION: Payment options (Standard)
+						-->
+						<div class="option" data-type="payment" data-license="standard">
+							<h6><span class="type">Ways to Buy</span><a href="/pricing">Compare</a></h6>
+							<div class="optgroup radgroup" data-license="standard">
+																<fieldset>
+									<label for="f_payment_standard_single-image" class="checked" >
+										<input type="radio" id="f_payment_standard_single-image" name="payment_standard" data-cost="14.99" value="single-image"  checked="checked" tabindex="5">
+										<span class="label">Pay-per-Image</span>
+										<span class="value"><small>$</small><var>14.99</var></span>
+									</label>
+								</fieldset>
+																<fieldset>
+									<label for="f_payment_standard_credits">
+										<input type="radio" id="f_payment_standard_credits" name="payment_standard" data-cost="1" value="credits" tabindex="6">
+										<span class="label">Credits</span>
+										<span class="value"><small>$</small><var>1.00</var></span>
+									</label>
+								</fieldset>
+								<fieldset>
+									<label for="f_payment_standard_subscription">
+										<input type="radio" id="f_payment_standard_subscription" name="payment_standard" data-cost="1" value="subscription" tabindex="7">
+										<span class="label">Subscription</span>
+										<span class="value"><small>$</small><var>0.69</var></span>
+									</label>
+								</fieldset>
+							</div>
+							<div class="help">
+								<p>There are three ways to pay for Standard licenses. Prices are $<abbr title="United States Dollars">US</abbr>.</p>
+
+								<table>
+									<thead>
+										<tr>
+											<th>Pay with</th>
+											<th>Image Price</th>
+										</tr>
+									</thead>
+									<tbody>
+																				<tr>
+											<td colspan="2">
+												<span class="title">
+													<span class="dt">Pay-per-Image</span>
+													<span class="dm"></span>
+													<span class="dd"><small>$</small>14.99</span>
+												</span>
+												<span class="byline">One-time payment</span>
+											</td>
+										</tr>
+																				<tr>
+											<td colspan="2">
+												<span class="title">
+													<span class="dt">Pre-paid Credits</span>
+													<span class="dm"></span>
+													<span class="dd"><small>$</small>1</span>
+												</span>
+												<span class="byline">Download images on-demand (1 credit = $1). Minimum purchase of 30.</span>
+											</td>
+										</tr>
+										<tr>
+											<td colspan="2">
+												<span class="title">
+													<span class="dt">Subscription Plan</span>
+													<span class="dm"></span>
+													<span class="dd"><em>From</em> 69c</span>
+												</span>
+												<span class="byline">Choose a monthly plan. Unused downloads automatically roll into following month.</span>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<!--
+						-- OPTION: Payment options (Expanded)
+						-->
+						<div class="option" data-type="payment" data-license="expanded">
+							<h6><span class="type">Ways to Buy</span><a href="/faq/members/ways-to-buy">Compare</a></h6>
+							<div class="optgroup radgroup" data-license="expanded">
+																<fieldset>
+									<label for="f_payment_expanded_single-image" class="checked">
+										<input type="radio" id="f_payment_expanded_single-image" name="payment_expanded" data-cost="29.99" value="single-image" checked="checked" tabindex="8">
+										<span class="label">Pay-per-Image</span>
+										<span class="value"><small>$</small><var>29.99</var></span>
+									</label>
+								</fieldset>
+																<fieldset>
+									<label for="f_payment_expanded_credits">
+										<input type="radio" id="f_payment_expanded_credits" name="payment_expanded" data-cost="30" value="credits" tabindex="9">
+										<span class="label">Credits</span>
+										<span class="value"><small>$</small><var>30.00</var></span>
+									</label>
+								</fieldset>
+							</div>
+														<div class="help">
+								<p>There are two ways to pay for Expanded licenses. Prices are $<abbr title="United States Dollars">US</abbr>.</p>
+
+								<table>
+									<thead>
+										<tr>
+											<th>Pay with</th>
+											<th>Cost per Image</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td colspan="2">
+												<span class="title">
+													<span class="dt">Pay-per-Image</span>
+													<span class="dm"></span>
+													<span class="dd"><small>$</small>29.99</span>
+												</span>
+												<span class="byline">One-off payment, no signup needed.</span>
+											</td>
+										</tr>
+										<tr>
+											<td colspan="2">
+												<span class="title">
+													<span class="dt">Pre-paid Credits</span>
+													<span class="dm"></span>
+													<span class="dd"><small>$</small>30</span>
+												</span>
+												<span class="byline">Download images on-demand (1 credit = $1).</span>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+													</div>
+						<!--
+						-- OPTION: Customization
+						-->
+						<div class="option" data-type="customization">
+							<h6><span class="type">New Option!</span><a href="/faq/members/what-is-hire-a-designer">What is this?</a></h6>
+							<div class="optgroup chkgroup">
+								<fieldset>
+									<label for="f_payment_customization" class="checked_">
+										<input type="checkbox" id="f_payment_customization" name="payment_customization" data-cost="84" value="customization" tabindex="12">
+										<span class="label">Customize image</span>
+										<span class="value"><small>$</small><var>84.00</var></span>
+									</label>
+								</fieldset>
+							</div>
+							<div class="help">
+								<p>Love the image but just need a few modifications? Let our talented artists do the work for you!</p>
+								<p>We'll connect you with a designer who can make updates and send you the artwork in a format of your choice.</p>
+								<h4>Examples</h4>
+								<ul>
+									<li>Change the text</li>
+									<li>Modify colors</li>
+									<li>Resize to new dimensions</li>
+									<li>Include logo or symbol</li>
+									<li>Add your company or business name</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="download">
+						<button type="button" data-action="download">
+							<span class="label">Download Image</span>
+							<span class="icon"></span>
+						</button>
+						<h6><span class="label">Files Included</span></h6>
+						<div class="help">
+							<span class="loading"><span class="label">Loading Details...</span></span>
+						</div>
+					</div>
+					<div class="download_options">
+						<div class="wrap">
+							<div class="optgroup" data-action="download">
+								<span class="header">Download File/s:</span>
+								<div class="dropdown" data-value="zip">
+									<div class="display">
+										<span class="label"><strong>ZIP Archive</strong></span>
+										<span class="icon"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"><path d="M10.6,12.8 15,17.2 19.4,12.8"/></svg></span>
+									</div>
+									<div class="select">
+										<select>
+											<optgroup label="All Files">
+												<option value="zip" data-label="ZIP Archive" data-details="" data-url="" selected="selected">ZIP Archive</option>											</optgroup>
+											<optgroup label="Image">
+												<option value="jpg" data-label="High-res JPG" data-details="300 DPI+" data-url="">High-res JPG (300 DPI+)</option>												<option value="png" data-label="High-res PNG" data-details="300 DPI+" data-url="">High-res PNG (300 DPI+)</option>											</optgroup>
+											<optgroup label="Vector">
+												<option value="ai" data-label="Adobe Illustrator" data-details="v10+" data-url="">Adobe Illustrator (v10+)</option>												<option value="eps" data-label="Vector EPS" data-details="v8+" data-url="">Vector EPS (v8+)</option>												<option value="pdf" data-label="Vector PDF" data-details="" data-url="">Vector PDF</option>											</optgroup>
+										</select>
+									</div>
+								</div>
+								<button type="button" data-action="download_file">
+									<span class="label">Download ZIP</span>
+									<span class="icon"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40"><path d="M23.6,21.2 23.6,9.5 16.4,9.5 16.4,21.3 10.8,21.3 11,21.5 20,30.5 29.2,21.3"/></svg></span>
+								</button>
+							</div>
+							<div class="optgroup" data-action="customization" data-status="uninitiated">
+								<span class="header">Image Customization:</span>
+								<ul class="actions">
+									<li>
+										<button type="button" data-job-url="/customizations">
+											<span class="label">View your job...</span>
+											<span class="icon"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"><path d="M12.8,19.4 17.2,15 12.8,10.6"/></svg></span>
+										</button>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+
+			<!-- Image -->
+			<div class="image">
+				<figure data-orientation="landscape" style="padding-top: 71.960784313725%;" class="target">
+					<div class="highres" data-src="https://cdn5.vectorstock.com/i/1000x1000/52/34/creative-blue-microphone-logo-vector-24925234.jpg">
+						<noscript><img src="https://cdn5.vectorstock.com/i/1000x1000/52/34/creative-blue-microphone-logo-vector-24925234.jpg" title="Creative blue microphone logo vector image" alt="Creative blue microphone logo"></noscript>
+					</div>
+					<div class="lowres">
+						<img src="https://cdn5.vectorstock.com/i/thumbs/52/34/creative-blue-microphone-logo-vector-24925234.jpg" title="Creative blue microphone logo vector image" alt="Creative blue microphone logo">
+					</div>
+					<div class="overlay"></div>
+					<div class="panels">
+						<div class="share">
+							<h4>Share on</h4>
+							<ul>
+								<li class="pinterest"><button type="button" data-action="pinterest"><span><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" focusable="false" role="img"><path d="M12.5,0C5.6,0,0,5.6,0,12.5c0,5.12,3.08,9.52,7.48,11.45c-0.03-0.87-0.01-1.92,0.22-2.87c0.24-1.01,1.61-6.81,1.61-6.81s-0.4-0.8-0.4-1.98c0-1.85,1.07-3.24,2.41-3.24c1.14,0,1.69,0.85,1.69,1.88c0,1.14-0.73,2.85-1.1,4.44c-0.31,1.33,0.67,2.41,1.97,2.41c2.37,0,3.96-3.04,3.96-6.65c0-2.74-1.85-4.79-5.2-4.79c-3.79,0-6.15,2.83-6.15,5.99c0,1.09,0.32,1.86,0.82,2.45c0.23,0.27,0.26,0.38,0.18,0.7c-0.06,0.23-0.2,0.78-0.25,1c-0.08,0.32-0.34,0.43-0.63,0.31c-1.75-0.71-2.56-2.62-2.56-4.77c0-3.55,3-7.81,8.93-7.81c4.77,0,7.91,3.45,7.91,7.16c0,4.9-2.73,8.57-6.75,8.57c-1.35,0-2.62-0.73-3.05-1.56c0,0-0.73,2.88-0.88,3.44c-0.27,0.96-0.78,1.93-1.26,2.68C10.08,24.82,11.27,25,12.5,25C19.4,25,25,19.4,25,12.5S19.4,0,12.5,0L12.5,0z"/></svg></span><span class="label">Pinterest</span></span></button></li>
+								<li class="facebook"><button type="button" data-action="facebook"><span><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" focusable="false" role="img"><path d="M22.44,1H2.56C1.7,1,1,1.7,1,2.56v19.88C1,23.3,1.7,24,2.56,24h10.41v-8.89H9.98v-3.46h2.99V9.1c0-2.96,1.81-4.58,4.45-4.58c1.27,0,2.35,0.09,2.67,0.14v3.1l-1.83,0c-1.44,0-1.72,0.68-1.72,1.69v2.21h3.43l-0.45,3.46h-2.98V24h5.89C23.3,24,24,23.3,24,22.44V2.56C24,1.7,23.3,1,22.44,1z"/></svg></span><span class="label">Facebook</span></span></button></li>
+								<li class="twitter"><button type="button" data-action="twitter"><span><span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" focusable="false" role="img"><path d="M7.86,22.5c9.43,0,14.59-7.69,14.59-14.37c0-0.22,0-0.44-0.01-0.65c1-0.71,1.87-1.6,2.56-2.61c-0.92,0.4-1.91,0.67-2.95,0.79c1.06-0.62,1.87-1.61,2.26-2.79c-0.99,0.58-2.09,1-3.26,1.23c-0.94-0.98-2.27-1.6-3.74-1.6c-2.83,0-5.13,2.26-5.13,5.05c0,0.4,0.05,0.78,0.13,1.15C8.05,8.49,4.27,6.48,1.74,3.42C1.3,4.17,1.05,5.04,1.05,5.96c0,1.75,0.91,3.3,2.28,4.2C2.49,10.14,1.7,9.91,1,9.53C1,9.55,1,9.58,1,9.6c0,2.45,1.77,4.49,4.11,4.95c-0.43,0.12-0.88,0.18-1.35,0.18c-0.33,0-0.65-0.03-0.96-0.09c0.65,2.01,2.55,3.47,4.79,3.51C5.84,19.5,3.63,20.3,1.22,20.3c-0.41,0-0.82-0.02-1.22-0.07C2.27,21.66,4.97,22.5,7.86,22.5"/></svg></span><span class="label">Twitter</span></span></button></li>
+							</ul>
+						</div>
+						<div class="composite">
+							<button type="button" data-action="download"><span><span class="label">Download JPG Preview Image</span></span></button>
+						</div>
+					</div>
+				</figure>
+				<div class="details">
+					<div class="meta">
+						<ul>
+							<li class="meta-id">
+								<dl><dt>Image ID</dt><dd>24925234</dd></dl>
+							</li>
+							<li class="meta-artist">
+								<dl>
+									<dt>Artist</dt>
+									<dd><a href="/royalty-free-vectors/vectors-by_Abrastack" rel="nofollow">Abrastack</a><button type="button" data-action="follow" title="Follow Artists that you like to create a newsfeed of their recent images."><span class="label">Follow</span></button></dd>
+								</dl>
+							</li>
+						</ul>
+					</div>
+					<div class="options" data-total="2">
+						<ul>
+							<li class="opt-like">
+								<button type="button" data-action="like" data-count="0"><span class="icon">&hearts;</span><span class="label">Like</span><span class="tally"></span></button>
+							</li>
+							<li class="opt-cart">
+								<button type="button" data-action="cart"><span class="icon">+</span><span class="label">Cart</span></button>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<!-- Metadata -->
+			<div class="metadata">
+				<div itemtype="http://schema.org/Product" itemscope>
+					<meta itemprop="sku" content="24925234">
+					<meta itemprop="productID" content="24925234">
+					<meta itemprop="name" content="Creative blue microphone logo">
+					<meta itemprop="description" content="Creative Blue Microphone Logo. Download a Free Preview or High Quality Adobe Illustrator Ai, EPS, PDF and High Resolution JPEG versions.">
+					<meta itemprop="releaseDate" content="2019-04-17">
+					<link itemprop="image" href="https://cdn5.vectorstock.com/i/1000x1000/52/34/creative-blue-microphone-logo-vector-24925234.jpg">
+					
+					<div itemprop="brand" itemtype="http://schema.org/Thing" itemscope>
+						<meta itemprop="name" content="VectorStock">
+					</div>
+					<div itemprop="offers" itemtype="http://schema.org/Offer" itemscope>
+						<link itemprop="url" href="https://www.vectorstock.com/royalty-free-vector/creative-blue-microphone-logo-vector-24925234">
+						<meta itemprop="availability" content="https://schema.org/InStock">
+						<div itemprop="price">0.69</div>
+						<div itemprop="priceCurrency">USD</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+		<section id="vs-related">
+			<div id="group-similar" class="group">
+				<h6><span class="icon"></span><strong>Similar Images</strong></h6>
+
+				<div class="gallery large">
+					<ul>
+						<li data-src="https://cdn5.vectorstock.com/i/thumb-large/70/54/vintage-microphone-surrounded-festive-decor-vector-26797054.jpg"><a href="//www.vectorstock.com/royalty-free-vector/vintage-microphone-surrounded-festive-decor-vector-26797054" title="vintage microphone surrounded festive decor vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumb-large/70/54/vintage-microphone-surrounded-festive-decor-vector-26797054.jpg" title="vintage microphone surrounded festive decor" alt="vintage microphone surrounded festive decor vector image"></noscript></a></li>
+						<li data-src="https://cdn4.vectorstock.com/i/thumb-large/34/93/outline-vintage-microphone-vector-26893493.jpg"><a href="//www.vectorstock.com/royalty-free-vector/outline-vintage-microphone-vector-26893493" title="outline vintage microphone vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumb-large/34/93/outline-vintage-microphone-vector-26893493.jpg" title="outline vintage microphone" alt="outline vintage microphone vector image"></noscript></a></li>
+						<li data-src="https://cdn5.vectorstock.com/i/thumb-large/01/19/microphone-on-halftone-background-vector-22970119.jpg"><a href="//www.vectorstock.com/royalty-free-vector/microphone-on-halftone-background-vector-22970119" title="microphone on halftone background vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumb-large/01/19/microphone-on-halftone-background-vector-22970119.jpg" title="microphone on halftone background" alt="microphone on halftone background vector image"></noscript></a></li>
+						<li data-src="https://cdn1.vectorstock.com/i/thumb-large/86/30/microphone-icons-on-vector-30118630.jpg"><a href="//www.vectorstock.com/royalty-free-vector/microphone-icons-on-vector-30118630" title="microphone icons - on vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumb-large/86/30/microphone-icons-on-vector-30118630.jpg" title="microphone icons - on" alt="microphone icons - on vector image"></noscript></a></li>
+						<li data-src="https://cdn3.vectorstock.com/i/thumb-large/54/17/retro-style-microphone-isolated-on-white-vector-22325417.jpg"><a href="//www.vectorstock.com/royalty-free-vector/retro-style-microphone-isolated-on-white-vector-22325417" title="retro style microphone isolated on white vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumb-large/54/17/retro-style-microphone-isolated-on-white-vector-22325417.jpg" title="retro style microphone isolated on white" alt="retro style microphone isolated on white vector image"></noscript></a></li>
+						<li data-src="https://cdn4.vectorstock.com/i/thumb-large/78/73/microphones-3d-music-studio-misc-mic-equipment-vector-22367873.jpg"><a href="//www.vectorstock.com/royalty-free-vector/microphones-3d-music-studio-misc-mic-equipment-vector-22367873" title="microphones 3d music studio misc mic equipment vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumb-large/78/73/microphones-3d-music-studio-misc-mic-equipment-vector-22367873.jpg" title="microphones 3d music studio misc mic equipment" alt="microphones 3d music studio misc mic equipment vector image"></noscript></a></li>
+						<li data-src="https://cdn5.vectorstock.com/i/thumb-large/95/84/karaoke-or-music-mic-sign-radio-or-audio-vector-30519584.jpg"><a href="//www.vectorstock.com/royalty-free-vector/karaoke-or-music-mic-sign-radio-or-audio-vector-30519584" title="karaoke or music mic sign radio or audio vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumb-large/95/84/karaoke-or-music-mic-sign-radio-or-audio-vector-30519584.jpg" title="karaoke or music mic sign radio or audio" alt="karaoke or music mic sign radio or audio vector image"></noscript></a></li>
+						<li data-src="https://cdn4.vectorstock.com/i/thumb-large/75/23/retro-microphone-for-studio-icons-abstract-voice-vector-30317523.jpg"><a href="//www.vectorstock.com/royalty-free-vector/retro-microphone-for-studio-icons-abstract-voice-vector-30317523" title="retro microphone for studio icons abstract voice vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumb-large/75/23/retro-microphone-for-studio-icons-abstract-voice-vector-30317523.jpg" title="retro microphone for studio icons abstract voice" alt="retro microphone for studio icons abstract voice vector image"></noscript></a></li>
+						<li data-src="https://cdn4.vectorstock.com/i/thumb-large/17/38/microphone-with-icons-vector-21961738.jpg"><a href="//www.vectorstock.com/royalty-free-vector/microphone-with-icons-vector-21961738" title="microphone with icons vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumb-large/17/38/microphone-with-icons-vector-21961738.jpg" title="microphone with icons" alt="microphone with icons vector image"></noscript></a></li>
+						<li data-src="https://cdn3.vectorstock.com/i/thumb-large/77/42/retro-microphone-symbol-vector-20837742.jpg"><a href="//www.vectorstock.com/royalty-free-vector/retro-microphone-symbol-vector-20837742" title="retro microphone symbol vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumb-large/77/42/retro-microphone-symbol-vector-20837742.jpg" title="retro microphone symbol" alt="retro microphone symbol vector image"></noscript></a></li>
+						<li data-src="https://cdn3.vectorstock.com/i/thumb-large/93/62/isolated-linear-microphone-logo-for-music-vector-30339362.jpg"><a href="//www.vectorstock.com/royalty-free-vector/isolated-linear-microphone-logo-for-music-vector-30339362" title="isolated linear microphone logo for music vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumb-large/93/62/isolated-linear-microphone-logo-for-music-vector-30339362.jpg" title="isolated linear microphone logo for music" alt="isolated linear microphone logo for music vector image"></noscript></a></li>
+						<li data-src="https://cdn2.vectorstock.com/i/thumb-large/79/06/3d-isometric-flat-concept-microphone-vector-30417906.jpg"><a href="//www.vectorstock.com/royalty-free-vector/3d-isometric-flat-concept-microphone-vector-30417906" title="3d isometric flat concept microphone vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumb-large/79/06/3d-isometric-flat-concept-microphone-vector-30417906.jpg" title="3d isometric flat concept microphone" alt="3d isometric flat concept microphone vector image"></noscript></a></li>
+						<li data-src="https://cdn2.vectorstock.com/i/thumb-large/75/76/old-style-vintage-microphone-icon-on-white-vector-24917576.jpg"><a href="//www.vectorstock.com/royalty-free-vector/old-style-vintage-microphone-icon-on-white-vector-24917576" title="old style vintage microphone icon on white vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumb-large/75/76/old-style-vintage-microphone-icon-on-white-vector-24917576.jpg" title="old style vintage microphone icon on white" alt="old style vintage microphone icon on white vector image"></noscript></a></li>
+						<li data-src="https://cdn4.vectorstock.com/i/thumb-large/26/43/isolated-retro-vintage-vector-25972643.jpg"><a href="//www.vectorstock.com/royalty-free-vector/isolated-retro-vintage-vector-25972643" title="isolated retro vintage vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumb-large/26/43/isolated-retro-vintage-vector-25972643.jpg" title="isolated retro vintage" alt="isolated retro vintage vector image"></noscript></a></li>
+						<li data-src="https://cdn2.vectorstock.com/i/thumb-large/21/46/retro-microphone-golden-emblem-in-frame-realistic-vector-30802146.jpg"><a href="//www.vectorstock.com/royalty-free-vector/retro-microphone-golden-emblem-in-frame-realistic-vector-30802146" title="retro microphone golden emblem in frame realistic vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumb-large/21/46/retro-microphone-golden-emblem-in-frame-realistic-vector-30802146.jpg" title="retro microphone golden emblem in frame realistic" alt="retro microphone golden emblem in frame realistic vector image"></noscript></a></li>
+						<li data-src="https://cdn5.vectorstock.com/i/thumb-large/44/39/vintage-retro-microphone-music-standup-concert-vector-26994439.jpg"><a href="//www.vectorstock.com/royalty-free-vector/vintage-retro-microphone-music-standup-concert-vector-26994439" title="vintage retro microphone music standup concert vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumb-large/44/39/vintage-retro-microphone-music-standup-concert-vector-26994439.jpg" title="vintage retro microphone music standup concert" alt="vintage retro microphone music standup concert vector image"></noscript></a></li>
+						<li data-src="https://cdn4.vectorstock.com/i/thumb-large/17/73/realistic-microphone-white-podium-for-stage-and-vector-29251773.jpg"><a href="//www.vectorstock.com/royalty-free-vector/realistic-microphone-white-podium-for-stage-and-vector-29251773" title="realistic microphone white podium for stage and vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumb-large/17/73/realistic-microphone-white-podium-for-stage-and-vector-29251773.jpg" title="realistic microphone white podium for stage and" alt="realistic microphone white podium for stage and vector image"></noscript></a></li>
+						<li data-src="https://cdn2.vectorstock.com/i/thumb-large/00/01/microphone-icon-piece-musical-or-media-vector-26090001.jpg"><a href="//www.vectorstock.com/royalty-free-vector/microphone-icon-piece-musical-or-media-vector-26090001" title="microphone icon piece musical or media vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumb-large/00/01/microphone-icon-piece-musical-or-media-vector-26090001.jpg" title="microphone icon piece musical or media" alt="microphone icon piece musical or media vector image"></noscript></a></li>
+						<li data-src="https://cdn1.vectorstock.com/i/thumb-large/89/15/set-editable-stroke-line-icons-microphone-vector-25508915.jpg"><a href="//www.vectorstock.com/royalty-free-vector/set-editable-stroke-line-icons-microphone-vector-25508915" title="set editable stroke line icons microphone vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumb-large/89/15/set-editable-stroke-line-icons-microphone-vector-25508915.jpg" title="set editable stroke line icons microphone" alt="set editable stroke line icons microphone vector image"></noscript></a></li>
+						<li data-src="https://cdn2.vectorstock.com/i/thumb-large/30/56/microphone-and-notes-sketch-vector-30613056.jpg"><a href="//www.vectorstock.com/royalty-free-vector/microphone-and-notes-sketch-vector-30613056" title="microphone and notes sketch vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumb-large/30/56/microphone-and-notes-sketch-vector-30613056.jpg" title="microphone and notes sketch" alt="microphone and notes sketch vector image"></noscript></a></li>
+					</ul>
+				</div>
+				<div class="gallery small more">
+					<ul>
+						<li data-id="25048378" data-title="voice design concept template" data-src="https://cdn4.vectorstock.com/i/thumbs/83/78/voice-design-concept-template-vector-25048378.jpg"><a href="//www.vectorstock.com/royalty-free-vector/voice-design-concept-template-vector-25048378" title="voice design concept template vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/83/78/voice-design-concept-template-vector-25048378.jpg" title="voice design concept template" alt="voice design concept template vector image"></noscript></a></li>
+						<li data-id="30506739" data-title="microphone icon microphone icon in trendy flat" data-src="https://cdn5.vectorstock.com/i/thumbs/67/39/microphone-icon-microphone-icon-in-trendy-flat-vector-30506739.jpg"><a href="//www.vectorstock.com/royalty-free-vector/microphone-icon-microphone-icon-in-trendy-flat-vector-30506739" title="microphone icon microphone icon in trendy flat vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/67/39/microphone-icon-microphone-icon-in-trendy-flat-vector-30506739.jpg" title="microphone icon microphone icon in trendy flat" alt="microphone icon microphone icon in trendy flat vector image"></noscript></a></li>
+						<li data-id="30294150" data-title="retro microphone" data-src="https://cdn1.vectorstock.com/i/thumbs/41/50/retro-microphone-vector-30294150.jpg"><a href="//www.vectorstock.com/royalty-free-vector/retro-microphone-vector-30294150" title="retro microphone vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/41/50/retro-microphone-vector-30294150.jpg" title="retro microphone" alt="retro microphone vector image"></noscript></a></li>
+						<li data-id="26040873" data-title="engraved style for posters decoration and print" data-src="https://cdn4.vectorstock.com/i/thumbs/08/73/engraved-style-for-posters-decoration-and-print-vector-26040873.jpg"><a href="//www.vectorstock.com/royalty-free-vector/engraved-style-for-posters-decoration-and-print-vector-26040873" title="engraved style for posters decoration and print vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/08/73/engraved-style-for-posters-decoration-and-print-vector-26040873.jpg" title="engraved style for posters decoration and print" alt="engraved style for posters decoration and print vector image"></noscript></a></li>
+						<li data-id="27118661" data-title="microphone icon pattern mic broadcast texture" data-src="https://cdn2.vectorstock.com/i/thumbs/86/61/microphone-icon-pattern-mic-broadcast-texture-vector-27118661.jpg"><a href="//www.vectorstock.com/royalty-free-vector/microphone-icon-pattern-mic-broadcast-texture-vector-27118661" title="microphone icon pattern mic broadcast texture vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/86/61/microphone-icon-pattern-mic-broadcast-texture-vector-27118661.jpg" title="microphone icon pattern mic broadcast texture" alt="microphone icon pattern mic broadcast texture vector image"></noscript></a></li>
+						<li data-id="25162403" data-title="microphone icon design template" data-src="https://cdn4.vectorstock.com/i/thumbs/24/03/microphone-icon-design-template-vector-25162403.jpg"><a href="//www.vectorstock.com/royalty-free-vector/microphone-icon-design-template-vector-25162403" title="microphone icon design template vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/24/03/microphone-icon-design-template-vector-25162403.jpg" title="microphone icon design template" alt="microphone icon design template vector image"></noscript></a></li>
+						<li data-id="26745037" data-title="retro radio concept" data-src="https://cdn3.vectorstock.com/i/thumbs/50/37/retro-radio-concept-vector-26745037.jpg"><a href="//www.vectorstock.com/royalty-free-vector/retro-radio-concept-vector-26745037" title="retro radio concept vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumbs/50/37/retro-radio-concept-vector-26745037.jpg" title="retro radio concept" alt="retro radio concept vector image"></noscript></a></li>
+						<li data-id="23913291" data-title="radio and playing music notes and waves icon" data-src="https://cdn2.vectorstock.com/i/thumbs/32/91/radio-and-playing-music-notes-and-waves-icon-vector-23913291.jpg"><a href="//www.vectorstock.com/royalty-free-vector/radio-and-playing-music-notes-and-waves-icon-vector-23913291" title="radio and playing music notes and waves icon vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/32/91/radio-and-playing-music-notes-and-waves-icon-vector-23913291.jpg" title="radio and playing music notes and waves icon" alt="radio and playing music notes and waves icon vector image"></noscript></a></li>
+						<li data-id="21474148" data-title="radio music neon logo radio night neon" data-src="https://cdn4.vectorstock.com/i/thumbs/41/48/radio-music-neon-logo-radio-night-neon-vector-21474148.jpg"><a href="//www.vectorstock.com/royalty-free-vector/radio-music-neon-logo-radio-night-neon-vector-21474148" title="radio music neon logo radio night neon vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/41/48/radio-music-neon-logo-radio-night-neon-vector-21474148.jpg" title="radio music neon logo radio night neon" alt="radio music neon logo radio night neon vector image"></noscript></a></li>
+						<li data-id="21371589" data-title="creative microphone in shape of speech bubbles" data-src="https://cdn5.vectorstock.com/i/thumbs/15/89/creative-microphone-in-shape-of-speech-bubbles-vector-21371589.jpg"><a href="//www.vectorstock.com/royalty-free-vector/creative-microphone-in-shape-of-speech-bubbles-vector-21371589" title="creative microphone in shape of speech bubbles vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/15/89/creative-microphone-in-shape-of-speech-bubbles-vector-21371589.jpg" title="creative microphone in shape of speech bubbles" alt="creative microphone in shape of speech bubbles vector image"></noscript></a></li>
+						<li data-id="22432715" data-title="the musical show microphone on the red scene" data-src="https://cdn1.vectorstock.com/i/thumbs/27/15/the-musical-show-microphone-on-the-red-scene-vector-22432715.jpg"><a href="//www.vectorstock.com/royalty-free-vector/the-musical-show-microphone-on-the-red-scene-vector-22432715" title="the musical show microphone on the red scene vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/27/15/the-musical-show-microphone-on-the-red-scene-vector-22432715.jpg" title="the musical show microphone on the red scene" alt="the musical show microphone on the red scene vector image"></noscript></a></li>
+						<li data-id="22399507" data-title="microphone stands on stage with a red curtain" data-src="https://cdn3.vectorstock.com/i/thumbs/95/07/microphone-stands-on-stage-with-a-red-curtain-vector-22399507.jpg"><a href="//www.vectorstock.com/royalty-free-vector/microphone-stands-on-stage-with-a-red-curtain-vector-22399507" title="microphone stands on stage with a red curtain vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumbs/95/07/microphone-stands-on-stage-with-a-red-curtain-vector-22399507.jpg" title="microphone stands on stage with a red curtain" alt="microphone stands on stage with a red curtain vector image"></noscript></a></li>
+						<li data-id="26932214" data-title="microphone icon set vintage mic collection" data-src="https://cdn5.vectorstock.com/i/thumbs/22/14/microphone-icon-set-vintage-mic-collection-vector-26932214.jpg"><a href="//www.vectorstock.com/royalty-free-vector/microphone-icon-set-vintage-mic-collection-vector-26932214" title="microphone icon set vintage mic collection vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/22/14/microphone-icon-set-vintage-mic-collection-vector-26932214.jpg" title="microphone icon set vintage mic collection" alt="microphone icon set vintage mic collection vector image"></noscript></a></li>
+						<li data-id="23770242" data-title="microphone icon blue monochrome color" data-src="https://cdn3.vectorstock.com/i/thumbs/02/42/microphone-icon-blue-monochrome-color-vector-23770242.jpg"><a href="//www.vectorstock.com/royalty-free-vector/microphone-icon-blue-monochrome-color-vector-23770242" title="microphone icon blue monochrome color vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumbs/02/42/microphone-icon-blue-monochrome-color-vector-23770242.jpg" title="microphone icon blue monochrome color" alt="microphone icon blue monochrome color vector image"></noscript></a></li>
+						<li data-id="23848183" data-title="microphone on the stand" data-src="https://cdn4.vectorstock.com/i/thumbs/81/83/microphone-on-the-stand-vector-23848183.jpg"><a href="//www.vectorstock.com/royalty-free-vector/microphone-on-the-stand-vector-23848183" title="microphone on the stand vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/81/83/microphone-on-the-stand-vector-23848183.jpg" title="microphone on the stand" alt="microphone on the stand vector image"></noscript></a></li>
+						<li data-id="29181900" data-title="color with microphone wings stage" data-src="https://cdn1.vectorstock.com/i/thumbs/19/00/color-with-microphone-wings-stage-vector-29181900.jpg"><a href="//www.vectorstock.com/royalty-free-vector/color-with-microphone-wings-stage-vector-29181900" title="color with microphone wings stage vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/19/00/color-with-microphone-wings-stage-vector-29181900.jpg" title="color with microphone wings stage" alt="color with microphone wings stage vector image"></noscript></a></li>
+						<li data-id="22231966" data-title="happy new year 2019 on the background of the stage" data-src="https://cdn2.vectorstock.com/i/thumbs/19/66/happy-new-year-2019-on-the-background-of-the-stage-vector-22231966.jpg"><a href="//www.vectorstock.com/royalty-free-vector/happy-new-year-2019-on-the-background-of-the-stage-vector-22231966" title="happy new year 2019 on the background of the stage vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/19/66/happy-new-year-2019-on-the-background-of-the-stage-vector-22231966.jpg" title="happy new year 2019 on the background of the stage" alt="happy new year 2019 on the background of the stage vector image"></noscript></a></li>
+						<li data-id="23817555" data-title="golden microphone icon on black background" data-src="https://cdn1.vectorstock.com/i/thumbs/75/55/golden-microphone-icon-on-black-background-vector-23817555.jpg"><a href="//www.vectorstock.com/royalty-free-vector/golden-microphone-icon-on-black-background-vector-23817555" title="golden microphone icon on black background vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/75/55/golden-microphone-icon-on-black-background-vector-23817555.jpg" title="golden microphone icon on black background" alt="golden microphone icon on black background vector image"></noscript></a></li>
+						<li data-id="22902347" data-title="blog broadcasting multimedia source with old" data-src="https://cdn3.vectorstock.com/i/thumbs/23/47/blog-broadcasting-multimedia-source-with-old-vector-22902347.jpg"><a href="//www.vectorstock.com/royalty-free-vector/blog-broadcasting-multimedia-source-with-old-vector-22902347" title="blog broadcasting multimedia source with old vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumbs/23/47/blog-broadcasting-multimedia-source-with-old-vector-22902347.jpg" title="blog broadcasting multimedia source with old" alt="blog broadcasting multimedia source with old vector image"></noscript></a></li>
+						<li data-id="26988965" data-title="3d realistic steel retro concert vocal" data-src="https://cdn1.vectorstock.com/i/thumbs/89/65/3d-realistic-steel-retro-concert-vocal-vector-26988965.jpg"><a href="//www.vectorstock.com/royalty-free-vector/3d-realistic-steel-retro-concert-vocal-vector-26988965" title="3d realistic steel retro concert vocal vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/89/65/3d-realistic-steel-retro-concert-vocal-vector-26988965.jpg" title="3d realistic steel retro concert vocal" alt="3d realistic steel retro concert vocal vector image"></noscript></a></li>
+						<li data-id="21264125" data-title="music background male hand with retro microphone" data-src="https://cdn1.vectorstock.com/i/thumbs/41/25/music-background-male-hand-with-retro-microphone-vector-21264125.jpg"><a href="//www.vectorstock.com/royalty-free-vector/music-background-male-hand-with-retro-microphone-vector-21264125" title="music background male hand with retro microphone vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/41/25/music-background-male-hand-with-retro-microphone-vector-21264125.jpg" title="music background male hand with retro microphone" alt="music background male hand with retro microphone vector image"></noscript></a></li>
+						<li data-id="29978380" data-title="microphone logo design" data-src="https://cdn1.vectorstock.com/i/thumbs/83/80/microphone-logo-design-vector-29978380.jpg"><a href="//www.vectorstock.com/royalty-free-vector/microphone-logo-design-vector-29978380" title="microphone logo design vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/83/80/microphone-logo-design-vector-29978380.jpg" title="microphone logo design" alt="microphone logo design vector image"></noscript></a></li>
+						<li data-id="28901508" data-title="microphone and studio speakers" data-src="https://cdn4.vectorstock.com/i/thumbs/15/08/microphone-and-studio-speakers-vector-28901508.jpg"><a href="//www.vectorstock.com/royalty-free-vector/microphone-and-studio-speakers-vector-28901508" title="microphone and studio speakers vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/15/08/microphone-and-studio-speakers-vector-28901508.jpg" title="microphone and studio speakers" alt="microphone and studio speakers vector image"></noscript></a></li>
+						<li data-id="26595916" data-title="stylish microphone icon" data-src="https://cdn2.vectorstock.com/i/thumbs/59/16/stylish-microphone-icon-vector-26595916.jpg"><a href="//www.vectorstock.com/royalty-free-vector/stylish-microphone-icon-vector-26595916" title="stylish microphone icon vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/59/16/stylish-microphone-icon-vector-26595916.jpg" title="stylish microphone icon" alt="stylish microphone icon vector image"></noscript></a></li>
+						<li data-id="26402759" data-title="banner for jazz music radio with silver microphone" data-src="https://cdn5.vectorstock.com/i/thumbs/27/59/banner-for-jazz-music-radio-with-silver-microphone-vector-26402759.jpg"><a href="//www.vectorstock.com/royalty-free-vector/banner-for-jazz-music-radio-with-silver-microphone-vector-26402759" title="banner for jazz music radio with silver microphone vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/27/59/banner-for-jazz-music-radio-with-silver-microphone-vector-26402759.jpg" title="banner for jazz music radio with silver microphone" alt="banner for jazz music radio with silver microphone vector image"></noscript></a></li>
+						<li data-id="30233746" data-title="microphone line icon on white background" data-src="https://cdn2.vectorstock.com/i/thumbs/37/46/microphone-line-icon-on-white-background-vector-30233746.jpg"><a href="//www.vectorstock.com/royalty-free-vector/microphone-line-icon-on-white-background-vector-30233746" title="microphone line icon on white background vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/37/46/microphone-line-icon-on-white-background-vector-30233746.jpg" title="microphone line icon on white background" alt="microphone line icon on white background vector image"></noscript></a></li>
+						<li data-id="24557781" data-title="realistic single silver microphone retro design" data-src="https://cdn2.vectorstock.com/i/thumbs/77/81/realistic-single-silver-microphone-retro-design-vector-24557781.jpg"><a href="//www.vectorstock.com/royalty-free-vector/realistic-single-silver-microphone-retro-design-vector-24557781" title="realistic single silver microphone retro design vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/77/81/realistic-single-silver-microphone-retro-design-vector-24557781.jpg" title="realistic single silver microphone retro design" alt="realistic single silver microphone retro design vector image"></noscript></a></li>
+						<li data-id="23535429" data-title="karaoke party retro background" data-src="https://cdn5.vectorstock.com/i/thumbs/54/29/karaoke-party-retro-background-vector-23535429.jpg"><a href="//www.vectorstock.com/royalty-free-vector/karaoke-party-retro-background-vector-23535429" title="karaoke party retro background vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/54/29/karaoke-party-retro-background-vector-23535429.jpg" title="karaoke party retro background" alt="karaoke party retro background vector image"></noscript></a></li>
+						<li data-id="31072376" data-title="silver studio mic 3d realisic" data-src="https://cdn2.vectorstock.com/i/thumbs/23/76/silver-studio-mic-3d-realisic-vector-31072376.jpg"><a href="//www.vectorstock.com/royalty-free-vector/silver-studio-mic-3d-realisic-vector-31072376" title="silver studio mic 3d realisic vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/23/76/silver-studio-mic-3d-realisic-vector-31072376.jpg" title="silver studio mic 3d realisic" alt="silver studio mic 3d realisic vector image"></noscript></a></li>
+						<li data-id="22884953" data-title="radio neon sign" data-src="https://cdn4.vectorstock.com/i/thumbs/49/53/radio-neon-sign-vector-22884953.jpg"><a href="//www.vectorstock.com/royalty-free-vector/radio-neon-sign-vector-22884953" title="radio neon sign vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/49/53/radio-neon-sign-vector-22884953.jpg" title="radio neon sign" alt="radio neon sign vector image"></noscript></a></li>
+						<li class="more"><div><a href="/royalty-free-vectors/vectors-similar-to_24925234" rel="nofollow"><span class="lrg">More Images…</span><span class="sml">More</span></a></div></li>
+					</ul>
+				</div>
+			</div>
+			<div id="group-artist" class="group">
+				<h6><span class="icon"></span><strong>More by <a href="/royalty-free-vectors/vectors-by_Abrastack" rel="nofollow">Abrastack</a></strong></h6>
+
+				<div class="gallery large">
+					<ul>
+						<li data-src="https://cdn4.vectorstock.com/i/thumb-large/53/93/creative-bubble-headphone-mic-logo-vector-24925393.jpg"><a href="//www.vectorstock.com/royalty-free-vector/creative-bubble-headphone-mic-logo-vector-24925393" title="creative bubble headphone mic logo vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumb-large/53/93/creative-bubble-headphone-mic-logo-vector-24925393.jpg" title="creative bubble headphone mic logo" alt="creative bubble headphone mic logo vector image"></noscript></a></li>
+						<li data-src="https://cdn3.vectorstock.com/i/thumb-large/53/92/creative-bubble-microphone-logo-vector-24925392.jpg"><a href="//www.vectorstock.com/royalty-free-vector/creative-bubble-microphone-logo-vector-24925392" title="creative bubble microphone logo vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumb-large/53/92/creative-bubble-microphone-logo-vector-24925392.jpg" title="creative bubble microphone logo" alt="creative bubble microphone logo vector image"></noscript></a></li>
+						<li data-src="https://cdn5.vectorstock.com/i/thumb-large/53/94/creative-bubble-headphone-microphone-logo-vector-24925394.jpg"><a href="//www.vectorstock.com/royalty-free-vector/creative-bubble-headphone-microphone-logo-vector-24925394" title="creative bubble headphone microphone logo vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumb-large/53/94/creative-bubble-headphone-microphone-logo-vector-24925394.jpg" title="creative bubble headphone microphone logo" alt="creative bubble headphone microphone logo vector image"></noscript></a></li>
+						<li data-src="https://cdn4.vectorstock.com/i/thumb-large/98/18/radio-planet-logo-vector-22409818.jpg"><a href="//www.vectorstock.com/royalty-free-vector/radio-planet-logo-vector-22409818" title="radio planet logo vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumb-large/98/18/radio-planet-logo-vector-22409818.jpg" title="radio planet logo" alt="radio planet logo vector image"></noscript></a></li>
+						<li data-src="https://cdn4.vectorstock.com/i/thumb-large/53/83/creative-abstract-camera-logo-vector-24925383.jpg"><a href="//www.vectorstock.com/royalty-free-vector/creative-abstract-camera-logo-vector-24925383" title="creative abstract camera logo vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumb-large/53/83/creative-abstract-camera-logo-vector-24925383.jpg" title="creative abstract camera logo" alt="creative abstract camera logo vector image"></noscript></a></li>
+						<li data-src="https://cdn2.vectorstock.com/i/thumb-large/53/11/happy-chef-logo-vector-22375311.jpg"><a href="//www.vectorstock.com/royalty-free-vector/happy-chef-logo-vector-22375311" title="happy chef logo vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumb-large/53/11/happy-chef-logo-vector-22375311.jpg" title="happy chef logo" alt="happy chef logo vector image"></noscript></a></li>
+						<li data-src="https://cdn2.vectorstock.com/i/thumb-large/52/41/creative-anchor-bird-logo-vector-24925241.jpg"><a href="//www.vectorstock.com/royalty-free-vector/creative-anchor-bird-logo-vector-24925241" title="creative anchor bird logo vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumb-large/52/41/creative-anchor-bird-logo-vector-24925241.jpg" title="creative anchor bird logo" alt="creative anchor bird logo vector image"></noscript></a></li>
+						<li data-src="https://cdn1.vectorstock.com/i/thumb-large/53/45/creative-vinyl-dj-logo-design-symbol-vector-24925345.jpg"><a href="//www.vectorstock.com/royalty-free-vector/creative-vinyl-dj-logo-design-symbol-vector-24925345" title="creative vinyl dj logo design symbol vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumb-large/53/45/creative-vinyl-dj-logo-design-symbol-vector-24925345.jpg" title="creative vinyl dj logo design symbol" alt="creative vinyl dj logo design symbol vector image"></noscript></a></li>
+						<li data-src="https://cdn1.vectorstock.com/i/thumb-large/54/70/creative-law-building-justice-logo-vector-24925470.jpg"><a href="//www.vectorstock.com/royalty-free-vector/creative-law-building-justice-logo-vector-24925470" title="creative law building justice logo vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumb-large/54/70/creative-law-building-justice-logo-vector-24925470.jpg" title="creative law building justice logo" alt="creative law building justice logo vector image"></noscript></a></li>
+						<li data-src="https://cdn3.vectorstock.com/i/thumb-large/53/77/creative-circle-play-symbol-logo-vector-24925377.jpg"><a href="//www.vectorstock.com/royalty-free-vector/creative-circle-play-symbol-logo-vector-24925377" title="creative circle play symbol logo vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumb-large/53/77/creative-circle-play-symbol-logo-vector-24925377.jpg" title="creative circle play symbol logo" alt="creative circle play symbol logo vector image"></noscript></a></li>
+					</ul>
+				</div>
+				<div class="gallery small more">
+					<ul>
+						<li data-id="23572361" data-title="print" data-src="https://cdn2.vectorstock.com/i/thumbs/23/61/print-vector-23572361.jpg"><a href="//www.vectorstock.com/royalty-free-vector/print-vector-23572361" title="print vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/23/61/print-vector-23572361.jpg" title="print" alt="print vector image vector image"></noscript></a></li>
+						<li data-id="25619464" data-title="creative traditional oven bread logo design symbol" data-src="https://cdn5.vectorstock.com/i/thumbs/94/64/creative-traditional-oven-bread-logo-design-symbol-vector-25619464.jpg"><a href="//www.vectorstock.com/royalty-free-vector/creative-traditional-oven-bread-logo-design-symbol-vector-25619464" title="creative traditional oven bread logo design symbol vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/94/64/creative-traditional-oven-bread-logo-design-symbol-vector-25619464.jpg" title="creative traditional oven bread logo design symbol" alt="creative traditional oven bread logo design symbol vector image vector image"></noscript></a></li>
+						<li data-id="22389151" data-title="pro chef logo" data-src="https://cdn2.vectorstock.com/i/thumbs/91/51/pro-chef-logo-vector-22389151.jpg"><a href="//www.vectorstock.com/royalty-free-vector/pro-chef-logo-vector-22389151" title="pro chef logo vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/91/51/pro-chef-logo-vector-22389151.jpg" title="pro chef logo" alt="pro chef logo vector image vector image"></noscript></a></li>
+						<li data-id="22495278" data-title="feather ink book logo" data-src="https://cdn4.vectorstock.com/i/thumbs/52/78/feather-ink-book-logo-vector-22495278.jpg"><a href="//www.vectorstock.com/royalty-free-vector/feather-ink-book-logo-vector-22495278" title="feather ink book logo vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/52/78/feather-ink-book-logo-vector-22495278.jpg" title="feather ink book logo" alt="feather ink book logo vector image vector image"></noscript></a></li>
+						<li data-id="25619467" data-title="creative traditional oven fire logo design symbol" data-src="https://cdn3.vectorstock.com/i/thumbs/94/67/creative-traditional-oven-fire-logo-design-symbol-vector-25619467.jpg"><a href="//www.vectorstock.com/royalty-free-vector/creative-traditional-oven-fire-logo-design-symbol-vector-25619467" title="creative traditional oven fire logo design symbol vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumbs/94/67/creative-traditional-oven-fire-logo-design-symbol-vector-25619467.jpg" title="creative traditional oven fire logo design symbol" alt="creative traditional oven fire logo design symbol vector image vector image"></noscript></a></li>
+						<li data-id="25619521" data-title="creative oven grilled chicken turkey food logo" data-src="https://cdn2.vectorstock.com/i/thumbs/95/21/creative-oven-grilled-chicken-turkey-food-logo-vector-25619521.jpg"><a href="//www.vectorstock.com/royalty-free-vector/creative-oven-grilled-chicken-turkey-food-logo-vector-25619521" title="creative oven grilled chicken turkey food logo vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/95/21/creative-oven-grilled-chicken-turkey-food-logo-vector-25619521.jpg" title="creative oven grilled chicken turkey food logo" alt="creative oven grilled chicken turkey food logo vector image vector image"></noscript></a></li>
+						<li data-id="23572381" data-title="creative viking head cleavers logo" data-src="https://cdn2.vectorstock.com/i/thumbs/23/81/creative-viking-head-cleavers-logo-vector-23572381.jpg"><a href="//www.vectorstock.com/royalty-free-vector/creative-viking-head-cleavers-logo-vector-23572381" title="creative viking head cleavers logo vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/23/81/creative-viking-head-cleavers-logo-vector-23572381.jpg" title="creative viking head cleavers logo" alt="creative viking head cleavers logo vector image vector image"></noscript></a></li>
+						<li data-id="23572378" data-title="creative abstract viking head logo" data-src="https://cdn4.vectorstock.com/i/thumbs/23/78/creative-abstract-viking-head-logo-vector-23572378.jpg"><a href="//www.vectorstock.com/royalty-free-vector/creative-abstract-viking-head-logo-vector-23572378" title="creative abstract viking head logo vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/23/78/creative-abstract-viking-head-logo-vector-23572378.jpg" title="creative abstract viking head logo" alt="creative abstract viking head logo vector image vector image"></noscript></a></li>
+						<li data-id="23572384" data-title="creative viking head logo" data-src="https://cdn5.vectorstock.com/i/thumbs/23/84/creative-viking-head-logo-vector-23572384.jpg"><a href="//www.vectorstock.com/royalty-free-vector/creative-viking-head-logo-vector-23572384" title="creative viking head logo vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/23/84/creative-viking-head-logo-vector-23572384.jpg" title="creative viking head logo" alt="creative viking head logo vector image vector image"></noscript></a></li>
+						<li data-id="30399267" data-title="creative gazelle hill logo" data-src="https://cdn3.vectorstock.com/i/thumbs/92/67/creative-gazelle-hill-logo-vector-30399267.jpg"><a href="//www.vectorstock.com/royalty-free-vector/creative-gazelle-hill-logo-vector-30399267" title="creative gazelle hill logo vector image"><noscript><img src="https://cdn3.vectorstock.com/i/thumbs/92/67/creative-gazelle-hill-logo-vector-30399267.jpg" title="creative gazelle hill logo" alt="creative gazelle hill logo vector image vector image"></noscript></a></li>
+						<li data-id="22434811" data-title="aircraft fly symbolic creative air logo" data-src="https://cdn2.vectorstock.com/i/thumbs/48/11/aircraft-fly-symbolic-creative-air-logo-vector-22434811.jpg"><a href="//www.vectorstock.com/royalty-free-vector/aircraft-fly-symbolic-creative-air-logo-vector-22434811" title="aircraft fly symbolic creative air logo vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/48/11/aircraft-fly-symbolic-creative-air-logo-vector-22434811.jpg" title="aircraft fly symbolic creative air logo" alt="aircraft fly symbolic creative air logo vector image vector image"></noscript></a></li>
+						<li data-id="23572379" data-title="creative abstract viking head logo" data-src="https://cdn5.vectorstock.com/i/thumbs/23/79/creative-abstract-viking-head-logo-vector-23572379.jpg"><a href="//www.vectorstock.com/royalty-free-vector/creative-abstract-viking-head-logo-vector-23572379" title="creative abstract viking head logo vector image"><noscript><img src="https://cdn5.vectorstock.com/i/thumbs/23/79/creative-abstract-viking-head-logo-vector-23572379.jpg" title="creative abstract viking head logo" alt="creative abstract viking head logo vector image vector image"></noscript></a></li>
+						<li data-id="25619468" data-title="creative traditional oven fire logo design symbol" data-src="https://cdn4.vectorstock.com/i/thumbs/94/68/creative-traditional-oven-fire-logo-design-symbol-vector-25619468.jpg"><a href="//www.vectorstock.com/royalty-free-vector/creative-traditional-oven-fire-logo-design-symbol-vector-25619468" title="creative traditional oven fire logo design symbol vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/94/68/creative-traditional-oven-fire-logo-design-symbol-vector-25619468.jpg" title="creative traditional oven fire logo design symbol" alt="creative traditional oven fire logo design symbol vector image vector image"></noscript></a></li>
+						<li data-id="26089351" data-title="creative abstract open book feather ink logo" data-src="https://cdn2.vectorstock.com/i/thumbs/93/51/creative-abstract-open-book-feather-ink-logo-vector-26089351.jpg"><a href="//www.vectorstock.com/royalty-free-vector/creative-abstract-open-book-feather-ink-logo-vector-26089351" title="creative abstract open book feather ink logo vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/93/51/creative-abstract-open-book-feather-ink-logo-vector-26089351.jpg" title="creative abstract open book feather ink logo" alt="creative abstract open book feather ink logo vector image vector image"></noscript></a></li>
+						<li data-id="22540155" data-title="detective human smile head logo" data-src="https://cdn1.vectorstock.com/i/thumbs/01/55/detective-human-smile-head-logo-vector-22540155.jpg"><a href="//www.vectorstock.com/royalty-free-vector/detective-human-smile-head-logo-vector-22540155" title="detective human smile head logo vector image"><noscript><img src="https://cdn1.vectorstock.com/i/thumbs/01/55/detective-human-smile-head-logo-vector-22540155.jpg" title="detective human smile head logo" alt="detective human smile head logo vector image vector image"></noscript></a></li>
+						<li data-id="22389066" data-title="old chef logo" data-src="https://cdn2.vectorstock.com/i/thumbs/90/66/old-chef-logo-vector-22389066.jpg"><a href="//www.vectorstock.com/royalty-free-vector/old-chef-logo-vector-22389066" title="old chef logo vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/90/66/old-chef-logo-vector-22389066.jpg" title="old chef logo" alt="old chef logo vector image vector image"></noscript></a></li>
+						<li data-id="23873218" data-title="creative spartan helmet logo" data-src="https://cdn4.vectorstock.com/i/thumbs/32/18/creative-spartan-helmet-logo-vector-23873218.jpg"><a href="//www.vectorstock.com/royalty-free-vector/creative-spartan-helmet-logo-vector-23873218" title="creative spartan helmet logo vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/32/18/creative-spartan-helmet-logo-vector-23873218.jpg" title="creative spartan helmet logo" alt="creative spartan helmet logo vector image vector image"></noscript></a></li>
+						<li data-id="23572383" data-title="creative viking head cleavers logo" data-src="https://cdn4.vectorstock.com/i/thumbs/23/83/creative-viking-head-cleavers-logo-vector-23572383.jpg"><a href="//www.vectorstock.com/royalty-free-vector/creative-viking-head-cleavers-logo-vector-23572383" title="creative viking head cleavers logo vector image"><noscript><img src="https://cdn4.vectorstock.com/i/thumbs/23/83/creative-viking-head-cleavers-logo-vector-23572383.jpg" title="creative viking head cleavers logo" alt="creative viking head cleavers logo vector image vector image"></noscript></a></li>
+						<li data-id="22459921" data-title="delicious pizza slice ribbon symbol logo" data-src="https://cdn2.vectorstock.com/i/thumbs/99/21/delicious-pizza-slice-ribbon-symbol-logo-vector-22459921.jpg"><a href="//www.vectorstock.com/royalty-free-vector/delicious-pizza-slice-ribbon-symbol-logo-vector-22459921" title="delicious pizza slice ribbon symbol logo vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/99/21/delicious-pizza-slice-ribbon-symbol-logo-vector-22459921.jpg" title="delicious pizza slice ribbon symbol logo" alt="delicious pizza slice ribbon symbol logo vector image vector image"></noscript></a></li>
+						<li data-id="22540106" data-title="detective head sheriff logo" data-src="https://cdn2.vectorstock.com/i/thumbs/01/06/detective-head-sheriff-logo-vector-22540106.jpg"><a href="//www.vectorstock.com/royalty-free-vector/detective-head-sheriff-logo-vector-22540106" title="detective head sheriff logo vector image"><noscript><img src="https://cdn2.vectorstock.com/i/thumbs/01/06/detective-head-sheriff-logo-vector-22540106.jpg" title="detective head sheriff logo" alt="detective head sheriff logo vector image vector image"></noscript></a></li>
+						<li class="more"><div><a href="/royalty-free-vectors/vectors-by_Abrastack" rel="nofollow"><span class="lrg">More Images…</span><span class="sml">More</span></a></div></li>
+					</ul>
+				</div>
+			</div>
+			<div id="group-keywords" class="group">
+				<h6><span class="icon"></span><strong>Related Searches</strong></h6>
+				<ul>
+					<li><a href="/royalty-free-vectors/microphone-vectors">Microphone</a></li>
+					<li><a href="/royalty-free-vectors/vector-vectors">Vector</a></li>
+					<li><a href="/royalty-free-vectors/old-vectors">Old</a></li>
+					<li><a href="/royalty-free-vectors/mic-vectors">Mic</a></li>
+					<li><a href="/royalty-free-vectors/communication-vectors">Communication</a></li>
+					<li><a href="/royalty-free-vectors/media-vectors">Media</a></li>
+					<li><a href="/royalty-free-vectors/design-vectors">Design</a></li>
+					<li><a href="/royalty-free-vectors/classic-vectors">Classic</a></li>
+					<li><a href="/royalty-free-vectors/karaoke-vectors">Karaoke</a></li>
+					<li><a href="/royalty-free-vectors/concert-vectors">Concert</a></li>
+					<li><a href="/royalty-free-vectors/isolated-vectors">Isolated</a></li>
+					<li><a href="/royalty-free-vectors/equipment-vectors">Equipment</a></li>
+					<li><a href="/royalty-free-vectors/performance-vectors">Performance</a></li>
+					<li><a href="/royalty-free-vectors/audio-vectors">Audio</a></li>
+					<li><a href="/royalty-free-vectors/speaker-vectors">Speaker</a></li>
+					<li><a href="/royalty-free-vectors/music-vectors">Music</a></li>
+					<li><a href="/royalty-free-vectors/icon-vectors">Icon</a></li>
+					<li><a href="/royalty-free-vectors/illustration-vectors">Illustration</a></li>
+					<li><a href="/royalty-free-vectors/vocal-vectors">Vocal</a></li>
+					<li><a href="/royalty-free-vectors/sing-vectors">Sing</a></li>
+					<li><a href="/royalty-free-vectors/symbol-vectors">Symbol</a></li>
+					<li><a href="/royalty-free-vectors/musical-vectors">Musical</a></li>
+					<li><a href="/royalty-free-vectors/studio-vectors">Studio</a></li>
+					<li><a href="/royalty-free-vectors/speak-vectors">Speak</a></li>
+					<li><a href="/royalty-free-vectors/speech-vectors">Speech</a></li>
+					<li><a href="/royalty-free-vectors/radio-vectors">Radio</a></li>
+					<li><a href="/royalty-free-vectors/voice-vectors">Voice</a></li>
+					<li><a href="/royalty-free-vectors/sound-vectors">Sound</a></li>
+					<li><a href="/royalty-free-vectors/record-vectors">Record</a></li>
+				</ul>
+			</div>
+		</section>
+	</article>
+
+	<!-- Footer -->
+	<footer>
+
+		<div>
+		<div class="column c1">
+			<nav class="company">
+				<h4>VectorStock</h4>
+				<ul>
+					<li><a href="/" title="Home">Home</a></li>
+					<li class="sel"><a href="/free-vectors" title="Free Vectors">Free Vectors</a></li>
+					<li class="sel"><a href="/royalty-free-vectors" title="All Royalty-Free Vectors">All Vectors</a></li>
+				</ul>
+				<ul>
+					<li><a href="/what-is-a-vector" title="What is a Vector?">What is a Vector?</a></li>
+				</ul>
+				<ul>
+					<li class="sel"><a href="/faq" title="Frequently Asked Questions"><span class="long">Frequently Asked Questions</span><span class="short">FAQs</span></a></li>
+					<li><a href="/faq/members/terms-of-use" title="Terms &amp; Conditions">Terms &amp; Conditions</a></li>
+					<li class="sel"><a href="/contact" title="Contact Us">Contact Us</a></li>
+				</ul>
+			</nav>
+		</div>
+		<div class="column c2">
+			<nav class="account">
+					<h4><span class="title">Account</span><span class="icon"></span></h4>
+					<ul>
+						<li><a href="/signup" title="Join Now">Join Now</a></li>
+						<li><a href="/pricing" title="Pricing">Pricing</a></li>
+						<li><a href="?signup=1&contributor=1" title="Contributor Sign Up">Contributor Sign Up</a></li>
+						<li><a href="/faq/artists/why-sell-at-vectorstock" title="Contributor FAQ">Contributor FAQ</a></li>
+					</ul>
+			</nav>
+		</div>
+		<div class="column c3">
+			<nav class="social">
+				<h4>Social</h4>
+				<ul>
+					<li class="facebook sel"><a href="http://www.facebook.com/VectorStock" target="_blank"><span class="title">Facebook</span><span class="icon"></span></a></li>
+					<li class="pinterest sel"><a href="http://pinterest.com/vectorstock/" target="_blank"><span class="title">Pinterest</span><span class="icon"></span></a></li>
+					<li class="twitter sel"><a href="https://twitter.com/VectorStock" target="_blank"><span class="title">Twitter</span><span class="icon"></span></a></li>
+				</ul>
+			</nav>
+			<div class="signoff">
+				<h5><a href="https://www.vectorstock.com/" title="VectorStock®">VectorStock®</a></h5>
+				<p>VectorStock and the VectorStock logo are registered trademarks of VectorStock Media.<br>
+				© 2020. <span>All Rights Reserved.</span></p>
+			</div>
+		</div>
+	</div></footer>
+
+
+	<script src="//www.googleadservices.com/pagead/conversion_async.js"></script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"02e09611df","applicationID":"156179534","transactionName":"ZV0ENRYCC0RYAkVbDVwXJRQXFwpaFhNeSwNeTB9MAhEAUhQXVFEWXUpJFw0GEg==","queueTime":0,"applicationTime":42,"atts":"SRoHQ14YGEo=","errorBeacon":"bam.nr-data.net","agent":""}</script>
+</body>
+</html>
